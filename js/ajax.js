@@ -154,17 +154,14 @@ $(document).ready(function(){
     // });
   });
 
-  $('#logout-show').on('click', function(e){
+  $('#logout-btn').on('click', function(e){
     e.preventDefault();
     var cb = function cb(error, data) {
       if (error) {
         callback(error);
       };
     callback(null, data);
-    $('#login-show').show();
-    $('#logout-show').hide();
-    $('#cart-table').html('');
-    $('.message').html("Please Log in.");
+    changeLogout();
   };
     authAPI.logout(cb);
   });

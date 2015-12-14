@@ -5,3 +5,11 @@ var changeLogin = function(){
   $('.menu-bottom').slideUp('slow');
   $('.toggle-menu').slideUp('slow');
 };
+
+var changeLogout = function(){
+  $('#login-result').html("Logged out");
+  $('.panel-top').hide();
+  $('.responsive-menu').slideDown('slow');
+  $('.menu-bottom').slideDown('slow');
+  $('.toggle-menu').slideDown('slow');
+}
