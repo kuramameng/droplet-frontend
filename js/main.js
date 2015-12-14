@@ -27,7 +27,6 @@
 	// });
 
   $(".get-started").click(function(){
-
     $("#menu-1").slideUp('slow');
     $("#menu-container .gallery-section").slideDown('slow');
     return false;

@@ -4,6 +4,8 @@ var changeLogin = function(){
   $('.responsive-menu').slideUp('slow');
   $('.menu-bottom').slideUp('slow');
   $('.toggle-menu').slideUp('slow');
+  $('.login').slideUp('slow');
+  $('#user-center').slideDown('slow');
 };
 
 var changeLogout = function(){
@@ -12,4 +14,6 @@ var changeLogout = function(){
   $('.responsive-menu').slideDown('slow');
   $('.menu-bottom').slideDown('slow');
   $('.toggle-menu').slideDown('slow');
+  $('#user-center').hide();
+  $('.homepage').slideDown('slow');
 }
