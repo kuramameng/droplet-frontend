@@ -125,7 +125,7 @@ $(document).ready(function(){
         $('#login-result').html("Not logged in. Try again?");
         // return;
       }
-      $('#login-result').html("Logged in");
+      changeLogin();
 
       // authAPI.getProfile(function(err, data){
       //   if(err) console.error(error);

@@ -5,3 +5,9 @@
 .register {
   margin-top: 20px
 }
+.icon {
+  height: 25px;
+}
+.panel-top{
+  display: none;
+
