@@ -1,13 +1,29 @@
-.login {
+.login, #message-center, #check-weather{
   display: none;
   margin-top: 20px;
 }
 .register {
-  margin-top: 20px
+  margin-top: 20px;
 }
 .icon {
   height: 25px;
 }
 .panel-top {
+  display: none;
+}
+.col-md-2 {
+  border: 1px solid white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.profile-block {
+  border: 1px solid white;
+  height: 250px;
+  vertical-align: middle;
+  font-size: 50px;
+  color: white;
+  margin-top: 20px;
+}
+#user-profile {
   display: none;
 }

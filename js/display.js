@@ -1,19 +1,19 @@
 var changeLogin = function(){
   $('#login-result').html("Logged in");
   $('.panel-top').show();
-  $('.responsive-menu').slideUp('slow');
-  $('.menu-bottom').slideUp('slow');
-  $('.toggle-menu').slideUp('slow');
-  $('.login').slideUp('slow');
-  $('#user-center').slideDown('slow');
+  $('.responsive-menu').hide();
+  $('.menu-bottom').hide();
+  $('.toggle-menu').hide();
+  $('.login').hide();
+  $('#user-center').show();
 };
 
 var changeLogout = function(){
   $('#login-result').html("Logged out");
   $('.panel-top').hide();
-  $('.responsive-menu').slideDown('slow');
-  $('.menu-bottom').slideDown('slow');
-  $('.toggle-menu').slideDown('slow');
+  $('.responsive-menu').show();
+  $('.menu-bottom').show();
+  $('.toggle-menu').show();
   $('#user-center').hide();
-  $('.homepage').slideDown('slow');
+  $('.homepage').show();
 }
