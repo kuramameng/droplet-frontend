@@ -95,7 +95,6 @@ var callback = function(error, data) {
 };
 
 $(document).ready(function(){
-  $('#logout-show').hide();
 
 
   $('#register').on('submit', function(e) {
@@ -126,32 +125,20 @@ $(document).ready(function(){
         // return;
       }
       changeLogin();
-
-      // authAPI.getProfile(function(err, data){
-      //   if(err) console.error(error);
-      //   if(data.length > 0) {
-      //     console.log("has profile");
-      //     $('#login-show').hide();
-      //     $('#logout-show').show();
-      //     $('#message').html("Welcome back!");
-      //   }
-
-      //   else {
-      //     console.log("profile to be created");
-      //     $('#login-show').hide();
-      //     $('#logout-show').show();
-      //     $('.message').html("Welcome to Nozama!");
-      //     authAPI.createProfile(callback);
-      //   };
-      // });
+      $.ajax({
+        method: "GET",
+        url: "http://localhost:3000/profiles",
+        dataType: "json"
+      }).done(function(data){
+        var profileIndexTemplate = Handlebars.compile($('#user-center-index').html());
+        var profileHTML = profileIndexTemplate(data[0]);
+        $('#user-center').html('');
+        $('#user-center').append(profileHTML);
+      }).fail(function(data){
+        console.error(data);
+      });
     };
   authAPI.login(credentials, loginCb);
-
-
-    // authAPI.createProfile(function(err, data){
-    //     if(err) console.error(err)
-    //     console.log(data);
-    // });
   });
 
   $('#logout-btn').on('click', function(e){

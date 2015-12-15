@@ -90,7 +90,7 @@
 
                     <!-- HOMEPAGE -->
                     <div id="menu-1" class="homepage home-section text-center">
-                        <h1>Droplet Pic goes here</h1>
+                        <img src="img/droplet-homepage-pic.jpg" style="width: 800px; border-radius: 10px; ">
                         <p class="description"><span class="blue" style="font-size: 30px">Droplet</span> helps you send warm mesages to your families and friends based on their local weather.</p>
                         <fieldset class="button-holder">
                             <a class="btn light get-started">Get Started</a>
@@ -193,10 +193,11 @@
 
                     <!-- USER CENTER -->
                     <div id="user-center" class="content about-section">
+                        <script id="user-center-index" type="text-x-handlebars-template">
                         <div class="row" style="margin-top: 20px; text-align: center">
                             <div class="col-md-6" style="border: 1px solid white; height: 98px; vertical-align: middle">
-                                <div class="welcome" style="font-size: 60px; color: white; margin-top: 20px;">
-                                    Welcome!
+                                <div class="welcome" style="font-size: 40px; color: white; margin-top: 20px;">
+                                    Welcome {{email}}!
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -206,20 +207,28 @@
                             </div>
                             <div class="col-md-2">
                                 <div>
-                                    <a href="#" title="Send text/email"><i class="fa fa-heart fa-4x"></i></a>
+                                    <a href="#" title="Send text/email" id="send-message-btn"><i class="fa fa-heart fa-4x"></i></a>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="add-friend">
-                                    <a href="#" title="Add friend"><i class="fa fa-plus fa-4x"></i></a>
+                                    <a href="#" title="Add friend" id="add-friend-btn"><i class="fa fa-plus fa-4x"></i></a>
                                 </div>
                             </div>
                         </div>
                         <br>
-                        <div class="row" style="margin-top: 20px; text-align: center">
+                        <div class="row" style="margin-top: 20px">
                             <div class="col-md-4">
-                                <div class="user-location-weather"  style="height: 200px; border: 1px solid white">
-                                    User location and weather here.
+                                <div class="user-location-weather"  style="height: 200px; border: 1px solid white; color: white; padding-left: 20px">
+                                    <b>Your Profile</b>:
+                                    <br>
+                                    <b>Location:</b> {{address}}
+                                    <br>
+                                    <b>Email:</b> {{email}}
+                                    <br>
+                                    <b>Phone:</b> {{phone}}
+                                    <br>
+                                    <b>Weather:</b>
                                 </div>
                                 <div class="recent-message" style="height: 200px; border: 1px solid white">
                                     User recent message here.
@@ -236,6 +245,7 @@
                                 </div>
                             </div>
                         </div>
+                        </script>
                     </div>
                     <!-- END USER CENTER -->
 
@@ -301,8 +311,61 @@
                             <div class="col-md-8" style="border: 1px solid white; height: 500px"> Weather info
                             </div>
                         </div>
-                </div>
-                <!-- END CHECK WEATHER -->
+                    </div>
+                    <!-- END CHECK WEATHER -->
+
+                    <!-- SEND TEXT/EMAIL -->
+                    <div id="send-message">
+                        <div class="row" style="font-size: 50px; text-align: center">
+                            <a>EMAIL</a> | <a>SMS</a>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10" id="send-email">
+                                <form id="message-info" style="font-size: 25px">
+                                    <input type="text" name="email-address" placeholder="friend's email address" style="width: 100%; height:50px; margin-top: 20px;">
+                                    <textarea type="text" name="message-body" placeholder="Message body" style="width: 100%; height:250px; margin-top: 20px;"></textarea>
+                                    <input type="submit" placeholder="Send" style="margin-top: 20px; font-size: 25px">
+                                </form>
+                            </div>
+                            <div class="col-md-2">
+                                Weather info
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END SEND TEXT/EMAIL -->
+
+                    <!-- ADD FRIEND-->
+                    <div id="add-friend">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="friend-image">
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-5">
+                                <div class="friend-address">
+                                    friend address
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="friend-img-url">
+                                    friend image url
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-5">
+                                <div class="friend-phone">
+                                    friend phone
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END ADD FRIEND -->
         </div>
 
         <div class="footer">
@@ -318,6 +381,7 @@
         <script src="js/main.js"></script>
         <script src="js/ajax.js"></script>
         <script src="js/display.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/handlebarsjs/4.0.4/handlebars.js"></script>
 
     </body>
 </html>

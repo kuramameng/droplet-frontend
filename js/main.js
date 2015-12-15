@@ -44,25 +44,50 @@
     $('#user-center').hide();
     $('#message-center').hide();
     $('#check-weather').hide();
+    $('#send-message').hide();
+    $('#add-friend').hide();
   });
   $('#user-center-btn').click(function(){
     $('#user-profile').hide();
     $('#message-center').hide();
     $('#user-center').show();
     $('#check-weather').hide();
+    $('#send-message').hide();
+    $('#add-friend').hide();
   });
   $('#message-center-btn').click(function(){
     $('#user-profile').hide();
     $('#message-center').show();
     $('#user-center').hide();
     $('#check-weather').hide();
+    $('#send-message').hide();
+    $('#add-friend').hide();
   });
-  $('#weather-btn').click(function(){
+  $(document).on("click",'#weather-btn', function(){
     $('#user-profile').hide();
     $('#message-center').hide();
     $('#user-center').hide();
+    $('#send-message').hide();
+    $('#add-friend').hide();
     $('#check-weather').show();
+  });
+  $(document).on("click", '#send-message-btn', function(){
+    $('#user-profile').hide();
+    $('#message-center').hide();
+    $('#user-center').hide();
+    $('#check-weather').hide();
+    $('#add-friend').hide();
+    $('#send-message').show();
+  });
+  $(document).on("click", '#add-friend-btn', function(){
+    $('#user-profile').hide();
+    $('#message-center').hide();
+    $('#user-center').hide();
+    $('#check-weather').hide();
+    $('#send-message').hide();
+    $('#add-friend').show();
   })
+
 
 	// $(".main-menu a.contactbutton").click(function(){
 	// 	$("#menu-container .content").slideUp('slow');
