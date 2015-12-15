@@ -1,4 +1,4 @@
-.login, #message-center, #check-weather{
+.login, #message-center, #check-weather, #send-message, #add-friend{
   display: none;
   margin-top: 20px;
 }
