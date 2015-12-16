@@ -230,8 +230,20 @@
                                     <br>
                                     <b>Weather:</b>
                                 </div>
-                                <div class="recent-message" style="height: 200px; border: 1px solid white">
-                                    User recent message here.
+                                <div class="recent-message" style="height: 200px; border: 1px solid white; color: white; padding-left: 20px">
+                                    <u>Recent Messages</u>
+                                    {{#each messages}}
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                To: {{friend_firstname}}
+                                                <br>
+                                                {{date}}: {{weather}}
+                                            </div>
+                                            <div class="col-md-8">
+                                                {{message_body}}
+                                            </div>
+                                        </div>
+                                    {{/each}}
                                 </div>
                             </div>
                             <div class="col-md-8" style="height: 400px; border: 1px solid white">
