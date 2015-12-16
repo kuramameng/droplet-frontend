@@ -66,12 +66,21 @@ var authAPI = {
       contentType:'application/json; charset=utf-8',
       data: JSON.stringify(credentials)
     }, callback);
+  },
+
+  createMessage: function(text, callback){
+    this.ajax({
+      method: 'POST',
+      url: this.api_url +'/messages',
+      contentType:'application/json; charset=utf-8',
+      data: JSON.stringify(text)
+    }, callback);
   }
 };
 
 var form2object = function(form) {
   var data = {};
-  $(form).find("input").each(function(index, element) {
+  $(form).find("input, textarea").each(function(index, element) {
     var type = $(this).attr('type');
     if ($(this).attr('name') && type !== 'submit' && type !== 'hidden') {
       data[$(this).attr('name')] = $(this).val();
@@ -159,7 +168,7 @@ $(document).ready(function(){
   $('#message-info').unbind('submit').bind('submit', function(e){
     e.preventDefault();
     var form = form2object(this);
-
+    authAPI.createMessage(form, callback);
   })
 });
 
