@@ -280,13 +280,13 @@
                     <!-- SEND TEXT/EMAIL -->
                     <div id="send-message">
                         <div class="row" style="font-size: 50px; text-align: center">
-                            <a>EMAIL</a> | <a>SMS</a>
+                            <a>Send Message</a>
                         </div>
                         <div class="row">
-                            <div class="col-md-10" id="send-email">
+                            <div class="col-md-10" id="send-message">
                                 <form id="message-info" style="font-size: 25px">
-                                    <input type="text" name="email-address" placeholder="friend's email address" style="width: 100%; height:50px; margin-top: 20px;">
-                                    <textarea type="text" name="message-body" placeholder="Message body" style="width: 100%; height:250px; margin-top: 20px;"></textarea>
+                                    <input type="text" name="to" placeholder="friend's phone number..." style="width: 100%; height:50px; margin-top: 20px;">
+                                    <textarea type="text" name="body" placeholder="Message body" style="width: 100%; height:250px; margin-top: 20px;"></textarea>
                                     <input type="submit" placeholder="Send" style="margin-top: 20px; font-size: 25px">
                                 </form>
                             </div>
@@ -402,7 +402,8 @@
                         <br>
                         <b>Phone:</b> {{profile.phone}}
                         <br>
-                        <b>Weather:</b>
+                        <b>Weather: {{getWeather profile.location profile._id}}</b>
+                        <div id="weather{{profile._id}}"></div>
                     </div>
                     <div class="recent-message" style="height: 200px; border: 1px solid white; color: white; padding-left: 20px">
                         <u>Recent Messages</u>
@@ -435,7 +436,8 @@
                             <img src={{image}} style="width:85%; height:170px; margin-left: 30px; margin-top: 10px">
                             <p>{{first_name}} {{last_name}}</p>
                             <p>{{location}}</p>
-                            <p>weather</p>
+                            <p>Weather: {{getWeather location _id}}</b>
+                            <div id="weather{{_id}}"></div>
                         </div>
                         {{/each}}
                     </div>

@@ -154,6 +154,12 @@ $(document).ready(function(){
     e.preventDefault();
     var form = form2object(this);
     authAPI.addFriend(form,callback);
+  });
+
+  $('#message-info').unbind('submit').bind('submit', function(e){
+    e.preventDefault();
+    var form = form2object(this);
+
   })
 });
 

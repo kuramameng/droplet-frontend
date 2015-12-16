@@ -25,7 +25,21 @@ var changeLogin = function(){
           data["profile"] = profile[0];
           data["friends"] = friends;
           data["messages"] = messages;
-          console.log(data);
+
+          Handlebars.registerHelper('getWeather', function(location, id) {
+            function get_weather(){
+              var xhr = new XMLHttpRequest();
+              xhr.open("GET","http://query.yahooapis.com/v1/public/yql?q=select item from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + location + "')&format=json",true);
+              xhr.addEventListener('load', function(){
+                var weather = JSON.parse(xhr.responseText);
+                var item = weather.query.results.channel.item.condition.text;
+                $('#weather'+id).html(item);
+              });
+              xhr.send();
+            }
+            get_weather();
+            return "";
+          });
           var userIndexTemplate = Handlebars.compile($('#user-center-index').html());
           var userHTML = userIndexTemplate(data);
           $('#user-center').html('');
