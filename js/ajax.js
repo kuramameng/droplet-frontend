@@ -57,15 +57,6 @@ var authAPI = {
       contentType: 'application/json; charset=utf-8',
       data: JSON.stringify({})
     }, callback);
-  },
-
-  createOrder: function(callback) {
-    this.ajax({
-      method: 'POST',
-      url: this.api_url + '/orders',
-      contentType: 'application/json; charset=utf-8',
-      data: JSON.stringify({})
-    }, callback);
   }
 };
 
