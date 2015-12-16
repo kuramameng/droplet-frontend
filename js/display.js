@@ -60,4 +60,4 @@ var changeProfile = function(){
   }).fail(function(profile){
     console.error(profile);
   });
-}
+};
