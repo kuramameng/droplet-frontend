@@ -55,6 +55,7 @@
     $('#check-weather').hide();
     $('#send-message').hide();
     $('#add-friend').hide();
+    changeLogin();
   });
   $('#message-center-btn').click(function(){
     $('#user-profile').hide();

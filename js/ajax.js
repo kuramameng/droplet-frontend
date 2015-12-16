@@ -57,6 +57,15 @@ var authAPI = {
       contentType: 'application/json; charset=utf-8',
       data: JSON.stringify({})
     }, callback);
+  },
+
+  addFriend: function(credentials, callback){
+    this.ajax({
+      method: 'POST',
+      url: this.api_url +'/friends',
+      contentType:'application/json; charset=utf-8',
+      data: JSON.stringify(credentials)
+    }, callback);
   }
 };
 
@@ -126,7 +135,6 @@ $(document).ready(function(){
   $('#search-weather').unbind('submit').bind('submit', function(e){
     e.preventDefault();
     var form = form2object(this);
-
     // yahoo weather
     //"https://query.yahooapis.com/v1/public/yql?q=select item from weather.forecast where woeid in (select woeid from geo.places(1) where text='boston, ma')&format=json"
     var xhr = new XMLHttpRequest();
@@ -141,5 +149,11 @@ $(document).ready(function(){
       };
     };
   });
+
+  $('#add-friend-form').unbind('submit').bind('submit', function(e){
+    e.preventDefault();
+    var form = form2object(this);
+    authAPI.addFriend(form,callback);
+  })
 });
 

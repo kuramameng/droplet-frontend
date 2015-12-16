@@ -194,81 +194,7 @@
 
                     <!-- USER CENTER -->
                     <div id="user-center" class="content about-section">
-                        <script id="user-center-index" type="text-x-handlebars-template">
-                        <div class="row" style="margin-top: 20px; text-align: center">
-                            <div class="col-md-6" style="border: 1px solid white; height: 98px; vertical-align: middle">
-                                <div class="welcome" style="font-size: 40px; color: white; margin-top: 20px;">
-                                    Welcome {{profile.first_name}}!
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div>
-                                    <a href="#" title="Check Weather" id="weather-btn"><i class="fa fa-umbrella fa-4x"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div>
-                                    <a href="#" title="Send text/email" id="send-message-btn"><i class="fa fa-heart fa-4x"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="add-friend">
-                                    <a href="#" title="Add friend" id="add-friend-btn"><i class="fa fa-plus fa-4x"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row" style="margin-top: 20px">
-                            <div class="col-md-4">
-                                <div class="user-location-weather"  style="height: 200px; border: 1px solid white; color: white; padding-left: 20px">
-                                    <u>Your Profile</u>
-                                    <br>
-                                    <b>Location:</b> {{profile.location}}
-                                    <br>
-                                    <b>Email:</b> {{profile.email}}
-                                    <br>
-                                    <b>Phone:</b> {{profile.phone}}
-                                    <br>
-                                    <b>Weather:</b>
-                                </div>
-                                <div class="recent-message" style="height: 200px; border: 1px solid white; color: white; padding-left: 20px">
-                                    <u>Recent Messages</u>
-                                    {{#each messages}}
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                To: {{friend_firstname}}
-                                                <br>
-                                                {{date}}: {{weather}}
-                                            </div>
-                                            <div class="col-md-8">
-                                                {{message_body}}
-                                            </div>
-                                        </div>
-                                    {{/each}}
-                                </div>
-                            </div>
-                            <div class="col-md-8" style="height: 400px; border: 1px solid white">
-                                <div class="row">
-                                    <div class="search" style="float: right; margin: 5px">
-                                        <form>
-                                            <input type="text" value="search friends...">
-                                            <input type="submit" value="Search">
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    {{#each friends}}
-                                        <div class="friends-info col-md-4" style="text-align: center; color: white">
-                                            <img src={{image}} style="width:85%; height:170px; margin-left: 30px; margin-top: 10px">
-                                            <p>{{first_name}} {{last_name}}</p>
-                                            <p>{{location}}</p>
-                                            <p>weather</p>
-                                        </div>
-                                    {{/each}}
-                                </div>
-                            </div>
-                        </div>
-                        </script>
+
                     </div>
                     <!-- END USER CENTER -->
 
@@ -441,6 +367,81 @@
         <script src="js/ajax.js"></script>
         <script src="js/display.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/handlebarsjs/4.0.4/handlebars.js"></script>
+        <script id="user-center-index" type="text-x-handlebars-template">
+            <div class="row" style="margin-top: 20px; text-align: center">
+                <div class="col-md-6" style="border: 1px solid white; height: 98px; vertical-align: middle">
+                    <div class="welcome" style="font-size: 40px; color: white; margin-top: 20px;">
+                        Welcome {{profile.first_name}}!
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div>
+                        <a href="#" title="Check Weather" id="weather-btn"><i class="fa fa-umbrella fa-4x"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div>
+                        <a href="#" title="Send text/email" id="send-message-btn"><i class="fa fa-heart fa-4x"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="add-friend">
+                        <a href="#" title="Add friend" id="add-friend-btn"><i class="fa fa-plus fa-4x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row" style="margin-top: 20px">
+                <div class="col-md-4">
+                    <div class="user-location-weather"  style="height: 200px; border: 1px solid white; color: white; padding-left: 20px">
+                        <u>Your Profile</u>
+                        <br>
+                        <b>Location:</b> {{profile.location}}
+                        <br>
+                        <b>Email:</b> {{profile.email}}
+                        <br>
+                        <b>Phone:</b> {{profile.phone}}
+                        <br>
+                        <b>Weather:</b>
+                    </div>
+                    <div class="recent-message" style="height: 200px; border: 1px solid white; color: white; padding-left: 20px">
+                        <u>Recent Messages</u>
+                        {{#each messages}}
+                        <div class="row">
+                            <div class="col-md-4">
+                                To: {{friend_firstname}}
+                                <br>
+                                {{date}}: {{weather}}
+                            </div>
+                            <div class="col-md-8">
+                                {{message_body}}
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="col-md-8" style="border: 1px solid white">
+                    <div class="row">
+                        <div class="search" style="float: right; margin: 5px">
+                            <form>
+                                <input type="text" value="search friends...">
+                                <input type="submit" value="Search">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        {{#each friends}}
+                        <div class="friends-info col-md-4" style="text-align: center; color: white">
+                            <img src={{image}} style="width:85%; height:170px; margin-left: 30px; margin-top: 10px">
+                            <p>{{first_name}} {{last_name}}</p>
+                            <p>{{location}}</p>
+                            <p>weather</p>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </script>
         <script id="check-weather-index" type="text-x-handlebars-template">
             <div class="row" style="padding-top: 10px; padding-left: 20px;">
                 <u>Weather info</u>
