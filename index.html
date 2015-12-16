@@ -197,7 +197,7 @@
                         <div class="row" style="margin-top: 20px; text-align: center">
                             <div class="col-md-6" style="border: 1px solid white; height: 98px; vertical-align: middle">
                                 <div class="welcome" style="font-size: 40px; color: white; margin-top: 20px;">
-                                    Welcome {{profile.email}}!
+                                    Welcome {{profile.first_name}}!
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -273,35 +273,49 @@
 
                     <!-- USER PROFILE -->
                     <div id="user-profile">
-                        <div class="row">
-                            <div class="col-md-5 profile-block">
-                                <div class="user-name">
-                                    User-name
+                        <script id="user-profile-index" type="text-x-handlebars-template">
+                            <div class="row">
+                                <div class="col-md-5 profile-block">
+                                    <div class="user-name">
+                                        <u>Name</u>
+                                    </div>
+                                    <div style="margin-top: 50px">
+                                        {{first_name}} {{last_name}} ({{username}})
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-5 profile-block">
+                                    <div class="user-email">
+                                        <u>Email</u>
+                                    </div>
+                                    <div style="margin-top: 50px">
+                                        {{email}}
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-1">
-                            </div>
-                            <div class="col-md-5 profile-block">
-                                <div class="user-email">
-                                    User-email
+                            <br>
+                            <div class="row">
+                                <div class="col-md-5 profile-block">
+                                    <div class="user-address">
+                                        <u>Location</u>
+                                    </div>
+                                    <div style="margin-top: 50px">
+                                        {{address}}
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-5 profile-block">
+                                    <div class="user-phone">
+                                        <u>Phone</u>
+                                    </div>
+                                    <div style="margin-top: 50px">
+                                        {{phone}}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-md-5 profile-block">
-                                <div class="user-address">
-                                    User-address
-                                </div>
-                            </div>
-                            <div class="col-md-1">
-                            </div>
-                            <div class="col-md-5 profile-block">
-                                <div class="user-phone">
-                                    User-phone
-                                </div>
-                            </div>
-                        </div>
+                        </script>
                     </div>
                     <!-- END USER PROFILE -->
 

@@ -119,7 +119,7 @@ $(document).ready(function(){
       }
       changeLogin();
     };
-  authAPI.login(credentials, loginCb);
+    authAPI.login(credentials, loginCb);
   });
 
   $('#logout-btn').on('click', function(e){

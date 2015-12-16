@@ -46,6 +46,7 @@
     $('#check-weather').hide();
     $('#send-message').hide();
     $('#add-friend').hide();
+    changeProfile();
   });
   $('#user-center-btn').click(function(){
     $('#user-profile').hide();

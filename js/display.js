@@ -26,35 +26,15 @@ var changeLogin = function(){
           data["friends"] = friends;
           data["messages"] = messages;
           console.log(data);
-          var profileIndexTemplate = Handlebars.compile($('#user-center-index').html());
-          var profileHTML = profileIndexTemplate(data);
+          var userIndexTemplate = Handlebars.compile($('#user-center-index').html());
+          var userHTML = userIndexTemplate(data);
           $('#user-center').html('');
-          $('#user-center').append(profileHTML);
+          $('#user-center').append(userHTML);
         })
       })
   }).fail(function(profile){
     console.error(profile);
   });
-  // $.ajax({
-  //   method: "GET",
-  //   url: "http://localhost:3000/friends",
-  //   dataType: "json"
-  // }).done(function(friends){
-  //   data["friends"] = friends;
-  // }).fail(function(friends){
-  //   console.error(friends);
-  // });
-  // $.ajax({
-  //   method: "GET",
-  //   url: "http://localhost:3000/messages",
-  //   dataType: "json"
-  // }).done(function(message){
-  //   data["messages"] = message;
-  // }).fail(function(message){
-  //   console.error(message);
-  // });
-  // console.log(data);
-
 };
 
 var changeLogout = function(){
@@ -65,4 +45,19 @@ var changeLogout = function(){
   $('.toggle-menu').show();
   $('#user-center').hide();
   $('.homepage').show();
+};
+
+var changeProfile = function(){
+  $.ajax({
+    method: "GET",
+    url: "http://localhost:3000/profiles",
+    dataType: "json"
+  }).done(function(profile){
+    var profileIndexTemplate = Handlebars.compile($('#user-profile-index').html());
+    var profileHTML = profileIndexTemplate(profile[0]);
+    $('#user-profile').html('');
+    $('#user-profile').append(profileHTML);
+  }).fail(function(profile){
+    console.error(profile);
+  });
 }
