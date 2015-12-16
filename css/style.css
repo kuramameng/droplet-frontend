@@ -27,3 +27,22 @@
 #user-profile {
   display: none;
 }
+div.show-image:hover img{
+    opacity:0.5;
+}
+div.show-image:hover input {
+    display: block;
+    color: black;
+}
+div.show-image input {
+    position:absolute;
+    display:none;
+}
+div.show-image input.update {
+    top:5%;
+    left:20%;
+}
+div.show-image input.delete {
+    top:5%;
+    left:69%;
+}

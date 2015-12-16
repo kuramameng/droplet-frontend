@@ -405,7 +405,7 @@
                         <b>Weather: {{getWeather profile.location profile._id}}</b>
                         <div id="weather{{profile._id}}"></div>
                     </div>
-                    <div class="recent-message" style="height: 200px; border: 1px solid white; color: white; padding-left: 20px">
+                    <div class="recent-message" style=" border: 1px solid white; color: white; padding-left: 20px">
                         <u>Recent Messages</u>
                         {{#each messages}}
                         <div class="row">
@@ -433,11 +433,14 @@
                     <div class="row">
                         {{#each friends}}
                         <div class="friends-info col-md-4" style="text-align: center; color: white">
-                            <img src={{image}} style="width:85%; height:170px; margin-left: 30px; margin-top: 10px">
+                            <div class="show-image">
+                                <img src={{image}} style="width:85%; height:170px; margin-left: 30px; margin-top: 10px">
+                                <input class="update" type="button" value="Update" />
+                                <input class="delete" type="button" value="Delete" />
+                            </div>
                             <p>{{first_name}} {{last_name}}</p>
                             <p>{{location}}</p>
-                            <p>Weather: {{getWeather location _id}}</b>
-                            <div id="weather{{_id}}"></div>
+                            <p>Weather: {{getWeather location _id}}<span id="weather{{_id}}"></span></p>
                         </div>
                         {{/each}}
                     </div>
