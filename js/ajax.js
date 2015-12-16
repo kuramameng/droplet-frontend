@@ -79,8 +79,6 @@ var callback = function(error, data) {
 };
 
 $(document).ready(function(){
-
-
   $('#register').on('submit', function(e) {
     e.preventDefault();
     var credentials = form2object(this);
@@ -125,5 +123,22 @@ $(document).ready(function(){
     authAPI.logout(cb);
   });
 
+  $('#search-weather').on('submit', function(e){
+    e.preventDefault();
+    var form = form2object(this);
+
+    // yahoo weather
+    //"https://query.yahooapis.com/v1/public/yql?q=select item from weather.forecast where woeid in (select woeid from geo.places(1) where text='boston, ma')&format=json"
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET","http://query.yahooapis.com/v1/public/yql?q=select item from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + form.city + ", " + form.state + "')&format=json",true);
+    xhr.send();
+
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status == 200){
+      var weather = JSON.parse(xhr.responseText);
+      console.log(JSON.stringify(weather.query.results.channel.item,null,4));
+      };
+    };
+  });
 });
 
