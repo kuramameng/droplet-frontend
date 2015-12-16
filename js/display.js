@@ -63,3 +63,13 @@ var changeProfile = function(){
     console.error(profile);
   });
 };
+
+var showWeather = function(item){
+  Handlebars.registerHelper('lowerCaseAndDash', function(str) {
+    return str.toLowerCase().replace(' ','-');
+  });
+  var weatherIndexTemplate = Handlebars.compile($('#check-weather-index').html());
+  var weatherHTML = weatherIndexTemplate(item);
+  $('#weather-info').html('');
+  $('#weather-info').append(weatherHTML);
+}

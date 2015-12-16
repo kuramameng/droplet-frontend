@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/templatemo-style.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/weather-icons.min.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
@@ -344,7 +345,14 @@
                                     <input type="submit" placeholder="search" style="margin-top: 40px; font-size: 25px">
                                 </form>
                             </div>
-                            <div class="col-md-8" style="border: 1px solid white; height: 500px"> Weather info
+                            <div class="col-md-8" id="weather-info" style="border: 1px solid white; color: white; height: 500px">
+                                <script id="check-weather-index" type="text-x-handlebars-template">
+                                    <u>Weather info</u>
+                                    <br>
+                                    <i class="wi wi-{{lowerCaseAndDash condition.text}} fa-5x"></i>
+                                    <br>
+                                    {{condition.text}}
+                                </script>
                             </div>
                         </div>
                     </div>

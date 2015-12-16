@@ -123,7 +123,7 @@ $(document).ready(function(){
     authAPI.logout(cb);
   });
 
-  $('#search-weather').on('submit', function(e){
+  $('#search-weather').unbind('submit').bind('submit', function(e){
     e.preventDefault();
     var form = form2object(this);
 
@@ -136,7 +136,8 @@ $(document).ready(function(){
     xhr.onreadystatechange = function(){
       if(xhr.readyState == 4 && xhr.status == 200){
       var weather = JSON.parse(xhr.responseText);
-      console.log(JSON.stringify(weather.query.results.channel.item,null,4));
+      var item = weather.query.results.channel.item;
+      showWeather(item);
       };
     };
   });
