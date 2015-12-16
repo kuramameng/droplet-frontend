@@ -341,7 +341,6 @@
                                 <form id="search-weather" style="font-size: 25px">
                                     <input type="text" name="city" placeholder="city" style="width: 100%; height:50px; margin-top: 40px;">
                                     <input type="text" name="state" placeholder="state" style="width: 100%; height:50px; margin-top: 40px;">
-                                    <input type="text" name="zipcode" placeholder="zipcode" style="width: 100%; height:50px; margin-top: 40px;">
                                     <input type="submit" placeholder="search" style="margin-top: 40px; font-size: 25px">
                                 </form>
                             </div>
@@ -421,9 +420,14 @@
         <script src="js/display.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/handlebarsjs/4.0.4/handlebars.js"></script>
         <script id="check-weather-index" type="text-x-handlebars-template">
-            <u>Weather info</u>
-            <br>
-            {{{description}}}
+            <div class="row" style="padding-top: 10px; padding-left: 20px;">
+                <u>Weather info</u>
+                <br>
+                {{{description}}}
+            </div>
+            <div class="row" style="float: right; padding-top: 20px; padding-right: 20px; color: black">
+                <button> Add friend at this location</button>
+            </div>
         </script>
 
     </body>
