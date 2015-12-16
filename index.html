@@ -374,41 +374,62 @@
                     <!-- ADD FRIEND-->
                     <div id="add-friend">
                         <div class="row">
-                            <div class="col-md-5">
-                                <div class="friend-image">
+                            <form id="add-friend-form">
+                                <div class="col-md-5">
+                                    <div style="border: 1px solid white; height: 250px; margin-bottom: 20px">
+                                    </div>
+                                    <div>
+                                        <input type="text" name="image" placeholder="URL"></input>
+                                        <button>Apply</button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-1">
-                            </div>
-                            <div class="col-md-5">
-                                <div class="friend-address">
-                                    friend address
+                                <div class="col-md-1">
                                 </div>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-md-5">
-                                <div class="friend-img-url">
-                                    friend image url
+                                <div class="col-md-6">
+                                    <div class="row" style="float: left; margin-left: 20px">
+                                        <div>
+                                            First Name
+                                        </div>
+                                        <div>
+                                            <input type="text" name="first_name" placeholder="Jon"></input>
+                                        </div>
+                                        <div>
+                                            Last Name
+                                        </div>
+                                        <div>
+                                            <input type="text" name="last_name" placeholder="Snow"></input>
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <div class="row" style="float: left; margin-left: 20px">
+                                        <div>
+                                            Location
+                                        </div>
+                                        <div>
+                                            <input type="text" name="location" placeholder="Boston, MA"></input>
+                                        </div>
+                                        <div>
+                                            Phone
+                                        </div>
+                                        <div>
+                                            <input type="text" name="phone" placeholder="000-000-0000"></input>
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <div class="row" style="float: left; margin-left: 20px">
+                                        <div>
+                                            Email
+                                        </div>
+                                        <div>
+                                            <input type="text" name="email" placeholder="jon.snow@got.com"></input>
+                                        </div>
+                                        <input type="submit" value="Add!"></input>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-1">
-                            </div>
-                            <div class="col-md-5">
-                                <div class="friend-phone">
-                                    friend phone
-                                </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                     <!-- END ADD FRIEND -->
-        </div>
-
-        <div class="footer">
-            <div class="text-center">
-                <p class="copyright-text">Made by Jiangsha Meng</p>
-            </div>
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
