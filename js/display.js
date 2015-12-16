@@ -44,7 +44,9 @@ var changeLogout = function(){
   $('.menu-bottom').show();
   $('.toggle-menu').show();
   $('#user-center').hide();
-  $('.homepage').show();
+  $('#check-weather').hide();
+  $('.register').show();
+  $('.homepage').hide();
 };
 
 var changeProfile = function(){
