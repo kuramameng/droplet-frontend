@@ -200,49 +200,7 @@
 
                     <!-- USER PROFILE -->
                     <div id="user-profile">
-                        <script id="user-profile-index" type="text-x-handlebars-template">
-                            <div class="row">
-                                <div class="col-md-5 profile-block">
-                                    <div class="user-name">
-                                        <u>Name</u>
-                                    </div>
-                                    <div style="margin-top: 50px">
-                                        {{first_name}} {{last_name}} ({{username}})
-                                    </div>
-                                </div>
-                                <div class="col-md-1">
-                                </div>
-                                <div class="col-md-5 profile-block">
-                                    <div class="user-email">
-                                        <u>Email</u>
-                                    </div>
-                                    <div style="margin-top: 50px">
-                                        {{email}}
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row">
-                                <div class="col-md-5 profile-block">
-                                    <div class="user-address">
-                                        <u>Location</u>
-                                    </div>
-                                    <div style="margin-top: 50px">
-                                        {{location}}
-                                    </div>
-                                </div>
-                                <div class="col-md-1">
-                                </div>
-                                <div class="col-md-5 profile-block">
-                                    <div class="user-phone">
-                                        <u>Phone</u>
-                                    </div>
-                                    <div style="margin-top: 50px">
-                                        {{phone}}
-                                    </div>
-                                </div>
-                            </div>
-                        </script>
+
                     </div>
                     <!-- END USER PROFILE -->
 
@@ -435,8 +393,8 @@
                         <div class="friends-info col-md-4" style="text-align: center; color: white">
                             <div class="show-image">
                                 <img src={{image}} style="width:85%; height:170px; margin-left: 30px; margin-top: 10px">
-                                <input class="update" type="button" value="Update" />
-                                <input class="delete" type="button" value="Delete" />
+                                <input class="update" id="update-{{_id}}" type="button" value="Update" />
+                                <input class="delete" id="delete-{{_id}}" type="button" value="Delete" />
                             </div>
                             <p>{{first_name}} {{last_name}}</p>
                             <p>{{location}}</p>
@@ -457,6 +415,48 @@
                 <button> Add friend at this location</button>
             </div>
         </script>
-
+                        <script id="user-profile-index" type="text-x-handlebars-template">
+                            <div class="row">
+                                <div class="col-md-5 profile-block">
+                                    <div class="user-name">
+                                        <u>Name</u>
+                                    </div>
+                                    <div style="margin-top: 50px">
+                                        {{first_name}} {{last_name}} ({{username}})
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-5 profile-block">
+                                    <div class="user-email">
+                                        <u>Email</u>
+                                    </div>
+                                    <div style="margin-top: 50px">
+                                        {{email}}
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-5 profile-block">
+                                    <div class="user-address">
+                                        <u>Location</u>
+                                    </div>
+                                    <div style="margin-top: 50px">
+                                        {{location}}
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                                <div class="col-md-5 profile-block">
+                                    <div class="user-phone">
+                                        <u>Phone</u>
+                                    </div>
+                                    <div style="margin-top: 50px">
+                                        {{phone}}
+                                    </div>
+                                </div>
+                            </div>
+                        </script>
     </body>
 </html>

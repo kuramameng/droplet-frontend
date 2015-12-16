@@ -68,6 +68,15 @@ var authAPI = {
     }, callback);
   },
 
+  deleteFriend: function(id, callback){
+    this.ajax({
+      method: 'DELETE',
+      url: this.api_url +'/friends',
+      contentType:'application/json; charset=utf-8',
+      data: JSON.stringify(id)
+    }, callback);
+  },
+
   createMessage: function(text, callback){
     this.ajax({
       method: 'POST',
@@ -169,6 +178,18 @@ $(document).ready(function(){
     e.preventDefault();
     var form = form2object(this);
     authAPI.createMessage(form, callback);
+  });
+
+  $(document).on('click','.show-image',function(event){
+    var method = event.target.id.split('-')[0];
+    var id = {"_id": event.target.id.split('-')[1]};
+    if (method === 'update'){
+
+    }
+    if (method === 'delete'){
+      authAPI.deleteFriend(id, callback);
+      changeLogin();
+    }
   })
 });
 
