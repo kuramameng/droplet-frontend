@@ -1,5 +1,4 @@
 'use strict'
-
 var authAPI = {
 
   api_url: 'http://localhost:3000',
@@ -22,8 +21,7 @@ var authAPI = {
       method: 'POST',
       url: this.api_url +'/signup',
       contentType:'application/json; charset=utf-8',
-      data: JSON.stringify(credentials),
-      dataType: 'json'
+      data: JSON.stringify(credentials)
     }, callback);
   },
 
@@ -32,8 +30,7 @@ var authAPI = {
       method: 'POST',
       url: this.api_url +'/login',
       contentType:'application/json; charset=utf-8',
-      data: JSON.stringify(credentials),
-      dataType: 'json'
+      data: JSON.stringify(credentials)
     }, callback);
   },
 
@@ -42,16 +39,14 @@ var authAPI = {
       method: 'POST',
       url: this.api_url+'/logout',
       contentType:'application/json; charset=utf-8',
-      data: JSON.stringify({}),
-      dataType: 'json'
+      data: JSON.stringify({})
     }, callback);
   },
 
   getProfile: function(callback) {
     this.ajax({
       method: 'GET',
-      url: this.api_url + '/profiles',
-      dataType: 'json'
+      url: this.api_url + '/profiles'
     }, callback);
   },
 
@@ -60,8 +55,7 @@ var authAPI = {
       method: 'POST',
       url: this.api_url + '/profiles',
       contentType: 'application/json; charset=utf-8',
-      data: JSON.stringify({}),
-      dataType: 'json'
+      data: JSON.stringify({})
     }, callback);
   },
 
@@ -70,8 +64,7 @@ var authAPI = {
       method: 'POST',
       url: this.api_url + '/orders',
       contentType: 'application/json; charset=utf-8',
-      data: JSON.stringify({}),
-      dataType: 'json'
+      data: JSON.stringify({})
     }, callback);
   }
 };
@@ -122,21 +115,9 @@ $(document).ready(function(){
       if (error) {
         callback(error);
         $('#login-result').html("Not logged in. Try again?");
-        // return;
+        return;
       }
       changeLogin();
-      $.ajax({
-        method: "GET",
-        url: "http://localhost:3000/profiles",
-        dataType: "json"
-      }).done(function(data){
-        var profileIndexTemplate = Handlebars.compile($('#user-center-index').html());
-        var profileHTML = profileIndexTemplate(data[0]);
-        $('#user-center').html('');
-        $('#user-center').append(profileHTML);
-      }).fail(function(data){
-        console.error(data);
-      });
     };
   authAPI.login(credentials, loginCb);
   });
