@@ -86,7 +86,13 @@
     $('#user-center').hide();
     $('#check-weather').hide();
     $('#send-message').hide();
+    $('#friend-pic').attr("src", "");
     $('#add-friend').show();
+  });
+  $(document).on("click", '#friend-pic-btn', function(e){
+    e.preventDefault();
+    $('#friend-pic').attr("src", "");
+    $('#friend-pic').attr("src", $('#friend-pic-url').val());
   })
 
 
