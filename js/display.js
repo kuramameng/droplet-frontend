@@ -5,6 +5,7 @@ var changeLogin = function(){
   $('.menu-bottom').hide();
   $('.toggle-menu').hide();
   $('.login').hide();
+  $('#add-friend').hide();
   $('#user-center').show();
   $.ajax({
     method: "GET",
@@ -127,4 +128,17 @@ var addFriend = function(){
   $('#add-friend-form input[name = email]').attr("value", "");
   $('#friend-update').prop("value", "add");
   $('#add-friend').show();
-}
+};
+
+var addWeatherFriend = function(){
+  $('#user-profile').hide();
+  $('#message-center').hide();
+  $('#user-center').hide();
+  $('#check-weather').hide();
+  $('#send-message').hide();
+  $('#friend-pic').attr("src", "");
+  $('#friend-pic-url').attr("value", "");
+  $('#add-friend-form input[name = location]').attr("value", $('#search-weather input[name = city]').val() + ', ' + $('#search-weather input[name = state]').val());
+  $('#friend-update').prop("value", "add");
+  $('#add-friend').show();
+};
