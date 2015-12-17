@@ -46,3 +46,7 @@ div.show-image input.delete {
     top:5%;
     left:69%;
 }
+div.show-image input.send-message {
+    top:60%;
+    left:35%;
+}

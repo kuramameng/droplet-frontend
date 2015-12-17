@@ -32,14 +32,14 @@
     $('#add-friend').hide();
     changeLogin();
   });
-  $('#message-center-btn').click(function(){
-    $('#user-profile').hide();
-    $('#message-center').show();
-    $('#user-center').hide();
-    $('#check-weather').hide();
-    $('#send-message').hide();
-    $('#add-friend').hide();
-  });
+  // $('#message-center-btn').click(function(){
+  //   $('#user-profile').hide();
+  //   $('#message-center').show();
+  //   $('#user-center').hide();
+  //   $('#check-weather').hide();
+  //   $('#send-message').hide();
+  //   $('#add-friend').hide();
+  // });
   $(document).on("click",'#weather-btn', function(){
     $('#user-profile').hide();
     $('#message-center').hide();
@@ -57,6 +57,7 @@
     $('#check-weather').hide();
     $('#add-friend').hide();
     $('#send-message').show();
+    $('#message-info').find('input[type=text]').val('');
   });
   $(document).on("click", '#add-friend-btn', function(){
     addFriend();
