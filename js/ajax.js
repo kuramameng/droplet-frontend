@@ -126,11 +126,27 @@ $(document).ready(function(){
         if (error) {
           callback(error);
           // return;
+          $("#register-result").html("")
           $("#register-result").html("You're registered! Now log in.")
         }
+        authAPI.createProfile({
+          "first_name": "Drop",
+          "last_name": "let",
+          "email": "droplet@droplet.com",
+          "location": "boston, ma",
+          "phone": "857-445-5220",
+          "image": "http://radialdirect.com.au/water-droplet-from-tank.jpg"
+        }, callback);
+        authAPI.addFriend({
+          "first_name": "Drop",
+          "last_name": "let",
+          "email": "droplet@droplet.com",
+          "location": "boston, ma",
+          "phone": "857-445-5220",
+          "image": "http://radialdirect.com.au/water-droplet-from-tank.jpg"
+        }, callback);
       callback(null, data)};
       authAPI.register(credentials, cb);
-      authAPI.createProfile(credentials, callback);
     };
   });
 
