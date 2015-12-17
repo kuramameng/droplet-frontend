@@ -47,6 +47,8 @@
     $('#send-message').hide();
     $('#add-friend').hide();
     $('#check-weather').show();
+    $('#weather-info').html('');
+    $('#search-weather').find('input[type=text]').val('');
   });
   $(document).on("click", '#send-message-btn', function(){
     $('#user-profile').hide();
