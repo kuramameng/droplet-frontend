@@ -2,7 +2,7 @@
 var idStr;
 var authAPI = {
 
-  api_url: 'http://localhost:3000',
+  api_url: 'https://tranquil-bayou-4458.herokuapp.com/',
 
   ajax: function(config, cb){
     $.ajaxSetup({
