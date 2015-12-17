@@ -35,6 +35,7 @@ var changeLogin = function(){
                 var data = JSON.parse(xhr.responseText);
                 var currentWeather = data.query.results.channel.item.condition.text;
                 $('#weather'+id).html(currentWeather);
+                $('#weatherpic'+id).addClass("wi wi-" + currentWeather.toLowerCase().replace(' ','-') + " fa-2x");
               });
               xhr.send();
             }
@@ -79,9 +80,6 @@ var changeProfile = function(){
 };
 
 var showWeather = function(item){
-  Handlebars.registerHelper('lowerCaseAndDash', function(str) {
-    return str.toLowerCase().replace(' ','-');
-  });
   var weatherIndexTemplate = Handlebars.compile($('#check-weather-index').html());
   var weatherHTML = weatherIndexTemplate(item);
   $('#weather-info').html('');
