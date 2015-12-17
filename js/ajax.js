@@ -1,4 +1,5 @@
 'use strict'
+var idStr;
 var authAPI = {
 
   api_url: 'http://localhost:3000',
@@ -65,6 +66,14 @@ var authAPI = {
       url: this.api_url +'/friends',
       contentType:'application/json; charset=utf-8',
       data: JSON.stringify(credentials)
+    }, callback);
+  },
+  updateFriend: function(update, callback){
+    this.ajax({
+      method: 'PATCH',
+      url: this.api_url +'/friends',
+      contentType:'application/json; charset=utf-8',
+      data: JSON.stringify(update)
     }, callback);
   },
 
@@ -171,7 +180,16 @@ $(document).ready(function(){
   $('#add-friend-form').unbind('submit').bind('submit', function(e){
     e.preventDefault();
     var form = form2object(this);
-    authAPI.addFriend(form,callback);
+    if($('#friend-update').prop("value") === "add") {
+      authAPI.addFriend(form,callback);
+    }
+    if($('#friend-update').prop("value") === "update"){
+      var newForm = form2object(this);
+      newForm["_id"] = idStr;
+      console.log(newForm);
+      authAPI.updateFriend(newForm, callback);
+    }
+    changeLogin();
   });
 
   $('#message-info').unbind('submit').bind('submit', function(e){
@@ -182,12 +200,13 @@ $(document).ready(function(){
 
   $(document).on('click','.show-image',function(event){
     var method = event.target.id.split('-')[0];
-    var id = {"_id": event.target.id.split('-')[1]};
+    idStr = event.target.id.split('-')[1];
+    var idObj = {"_id": idStr};
     if (method === 'update'){
-
+      updateFriend(idStr);
     }
     if (method === 'delete'){
-      authAPI.deleteFriend(id, callback);
+      authAPI.deleteFriend(idObj, callback);
       changeLogin();
     }
   })

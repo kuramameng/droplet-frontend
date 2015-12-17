@@ -82,13 +82,7 @@
     $('#send-message').show();
   });
   $(document).on("click", '#add-friend-btn', function(){
-    $('#user-profile').hide();
-    $('#message-center').hide();
-    $('#user-center').hide();
-    $('#check-weather').hide();
-    $('#send-message').hide();
-    $('#friend-pic').attr("src", "");
-    $('#add-friend').show();
+    addFriend();
   });
   $(document).on("click", '#friend-pic-btn', function(e){
     e.preventDefault();

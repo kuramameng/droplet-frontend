@@ -276,13 +276,13 @@
                                             First Name
                                         </div>
                                         <div>
-                                            <input type="text" name="first_name" placeholder="Jon"></input>
+                                            <input type="text" name="first_name" id="first_name" placeholder="Jon"></input>
                                         </div>
                                         <div>
                                             Last Name
                                         </div>
                                         <div>
-                                            <input type="text" name="last_name" placeholder="Snow"></input>
+                                            <input type="text" name="last_name" id="last_name" placeholder="Snow"></input>
                                         </div>
                                         <br>
                                     </div>
@@ -291,13 +291,13 @@
                                             Location
                                         </div>
                                         <div>
-                                            <input type="text" name="location" placeholder="Boston, MA"></input>
+                                            <input type="text" name="location" id="location" placeholder="Boston, MA"></input>
                                         </div>
                                         <div>
                                             Phone
                                         </div>
                                         <div>
-                                            <input type="text" name="phone" placeholder="000-000-0000"></input>
+                                            <input type="text" name="phone" id="phone" placeholder="000-000-0000"></input>
                                         </div>
                                         <br>
                                     </div>
@@ -306,9 +306,9 @@
                                             Email
                                         </div>
                                         <div>
-                                            <input type="text" name="email" placeholder="jon.snow@got.com"></input>
+                                            <input type="text" name="email" id="email" placeholder="jon.snow@got.com"></input>
                                         </div>
-                                        <input type="submit" value="Add!"></input>
+                                        <input type="submit" id = "friend-update" value="Add"></input>
                                     </div>
                                 </div>
                             </form>
@@ -322,8 +322,8 @@
         <script src="js/min/plugins.min.js"></script>
         <script src="js/min/main.min.js"></script>
         <script src="js/main.js"></script>
-        <script src="js/ajax.js"></script>
         <script src="js/display.js"></script>
+        <script src="js/ajax.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/handlebarsjs/4.0.4/handlebars.js"></script>
         <script id="user-center-index" type="text-x-handlebars-template">
             <div class="row" style="margin-top: 20px; text-align: center">
@@ -415,48 +415,48 @@
                 <button> Add friend at this location</button>
             </div>
         </script>
-                        <script id="user-profile-index" type="text-x-handlebars-template">
-                            <div class="row">
-                                <div class="col-md-5 profile-block">
-                                    <div class="user-name">
-                                        <u>Name</u>
-                                    </div>
-                                    <div style="margin-top: 50px">
-                                        {{first_name}} {{last_name}} ({{username}})
-                                    </div>
-                                </div>
-                                <div class="col-md-1">
-                                </div>
-                                <div class="col-md-5 profile-block">
-                                    <div class="user-email">
-                                        <u>Email</u>
-                                    </div>
-                                    <div style="margin-top: 50px">
-                                        {{email}}
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row">
-                                <div class="col-md-5 profile-block">
-                                    <div class="user-address">
-                                        <u>Location</u>
-                                    </div>
-                                    <div style="margin-top: 50px">
-                                        {{location}}
-                                    </div>
-                                </div>
-                                <div class="col-md-1">
-                                </div>
-                                <div class="col-md-5 profile-block">
-                                    <div class="user-phone">
-                                        <u>Phone</u>
-                                    </div>
-                                    <div style="margin-top: 50px">
-                                        {{phone}}
-                                    </div>
-                                </div>
-                            </div>
-                        </script>
+        <script id="user-profile-index" type="text-x-handlebars-template">
+            <div class="row">
+                <div class="col-md-5 profile-block">
+                    <div class="user-name">
+                        <u>Name</u>
+                    </div>
+                    <div style="margin-top: 50px">
+                        {{first_name}} {{last_name}} ({{username}})
+                    </div>
+                </div>
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-5 profile-block">
+                    <div class="user-email">
+                        <u>Email</u>
+                    </div>
+                    <div style="margin-top: 50px">
+                        {{email}}
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-5 profile-block">
+                    <div class="user-address">
+                        <u>Location</u>
+                    </div>
+                    <div style="margin-top: 50px">
+                        {{location}}
+                    </div>
+                </div>
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-5 profile-block">
+                    <div class="user-phone">
+                        <u>Phone</u>
+                    </div>
+                    <div style="margin-top: 50px">
+                        {{phone}}
+                    </div>
+                </div>
+            </div>
+        </script>
     </body>
 </html>

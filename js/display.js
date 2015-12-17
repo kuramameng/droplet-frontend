@@ -31,14 +31,13 @@ var changeLogin = function(){
               var xhr = new XMLHttpRequest();
               xhr.open("GET","http://query.yahooapis.com/v1/public/yql?q=select item from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + location + "')&format=json",true);
               xhr.addEventListener('load', function(){
-                var weather = JSON.parse(xhr.responseText);
-                var item = weather.query.results.channel.item.condition.text;
-                $('#weather'+id).html(item);
+                var data = JSON.parse(xhr.responseText);
+                var currentWeather = data.query.results.channel.item.condition.text;
+                $('#weather'+id).html(currentWeather);
               });
               xhr.send();
             }
             get_weather();
-            return "";
           });
           var userIndexTemplate = Handlebars.compile($('#user-center-index').html());
           var userHTML = userIndexTemplate(data);
@@ -86,4 +85,46 @@ var showWeather = function(item){
   var weatherHTML = weatherIndexTemplate(item);
   $('#weather-info').html('');
   $('#weather-info').append(weatherHTML);
+};
+
+var updateFriend = function(id){
+  $('#user-profile').hide();
+  $('#message-center').hide();
+  $('#user-center').hide();
+  $('#check-weather').hide();
+  $('#send-message').hide();
+  $('#add-friend').show();
+  $.ajax({
+    method: "GET",
+    url: "http://localhost:3000/friends/" + id,
+    dataType: "json"
+  }).done(function(friend){
+    $('#friend-pic').attr("src", friend[0].image);
+    $('#friend-pic-url').attr("value", friend[0].image);
+    $('#add-friend-form input[name = first_name]').attr("value", friend[0].first_name);
+    $('#add-friend-form input[name = last_name]').attr("value", friend[0].last_name);
+    $('#add-friend-form input[name = location]').attr("value", friend[0].location);
+    $('#add-friend-form input[name = phone]').attr("value", friend[0].phone);
+    $('#add-friend-form input[name = email]').attr("value", friend[0].email);
+    $('#friend-update').prop("value", "update");
+  }).fail(function(friend){
+    console.error(friend);
+  });
+};
+
+var addFriend = function(){
+  $('#user-profile').hide();
+  $('#message-center').hide();
+  $('#user-center').hide();
+  $('#check-weather').hide();
+  $('#send-message').hide();
+  $('#friend-pic').attr("src", "");
+  $('#friend-pic-url').attr("value", "");
+  $('#add-friend-form input[name = first_name]').attr("value", "");
+  $('#add-friend-form input[name = last_name]').attr("value", "");
+  $('#add-friend-form input[name = location]').attr("value", "");
+  $('#add-friend-form input[name = phone]').attr("value", "");
+  $('#add-friend-form input[name = email]').attr("value", "");
+  $('#friend-update').prop("value", "add");
+  $('#add-friend').show();
 }
