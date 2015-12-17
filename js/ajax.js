@@ -129,7 +129,8 @@ $(document).ready(function(){
           $("#register-result").html("You're registered! Now log in.")
         }
       callback(null, data)};
-      authAPI.register(credentials, cb)
+      authAPI.register(credentials, cb);
+      authAPI.createProfile(credentials, callback);
     };
   });
 
