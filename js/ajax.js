@@ -209,6 +209,9 @@ $(document).ready(function(){
       authAPI.deleteFriend(idObj, callback);
       changeLogin();
     }
+    if (method === 'send'){
+      sendMessage(idStr);
+    }
   })
 });
 

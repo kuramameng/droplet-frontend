@@ -142,3 +142,21 @@ var addWeatherFriend = function(){
   $('#friend-update').prop("value", "add");
   $('#add-friend').show();
 };
+
+var sendMessage = function(id){
+  $('#user-profile').hide();
+  $('#message-center').hide();
+  $('#user-center').hide();
+  $('#check-weather').hide();
+  $('#add-friend').hide();
+  $('#send-message').show();
+  $.ajax({
+    method: "GET",
+    url: "http://localhost:3000/friends/" + id,
+    dataType: "json"
+  }).done(function(friend){
+    $('#message-info').find('input[name=to]').val(friend[0].phone);
+  }).fail(function(friend){
+    console.error(friend);
+  });
+}
