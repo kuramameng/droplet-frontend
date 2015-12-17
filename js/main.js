@@ -58,6 +58,7 @@
     $('#add-friend').hide();
     $('#send-message').show();
     $('#message-info').find('input[type=text]').val('');
+    $('#send-message-user-pic').attr("src", "");
   });
   $(document).on("click", '#add-friend-btn', function(){
     addFriend();

@@ -154,6 +154,7 @@ var sendMessage = function(id){
     dataType: "json"
   }).done(function(friend){
     $('#message-info').find('input[name=to]').val(friend[0].phone);
+    $('#send-message-user-pic').attr("src", friend[0].image);
   }).fail(function(friend){
     console.error(friend);
   });
