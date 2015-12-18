@@ -137,8 +137,10 @@ $(document).ready(function(){
               "uesrname" : credentials.username,
               "email" : credentials.email,
               "phone" : credentials.phone
-            }, callback)
-          changeLogin();
+            }, function(err, data){
+              if(err) console.log(err)
+              changeLogin();
+            })
         });
 
         $("#register-result").html("You're registered! Now logging in...");

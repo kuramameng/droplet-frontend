@@ -4,6 +4,7 @@ var changeLogin = function(){
   $('.responsive-menu').hide();
   $('.menu-bottom').hide();
   $('.toggle-menu').hide();
+  $('.register').hide();
   $('.login').hide();
   $('#add-friend').hide();
   $('#user-center').show();
