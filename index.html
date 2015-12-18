@@ -115,11 +115,23 @@
                                                 <form id="register">
                                                     <div class="top-margin">
                                                         <label>First Name</label>
-                                                        <input type="text" class="form-control">
+                                                        <input name="first_name" type="text" class="form-control">
                                                     </div>
                                                     <div class="top-margin">
                                                         <label>Last Name</label>
-                                                        <input type="text" class="form-control">
+                                                        <input name="last_name" type="text" class="form-control">
+                                                    </div>
+                                                     <div class="top-margin">
+                                                        <label>Location <span class="text-danger">*</span></label>
+                                                        <input name="location" type="text" class="form-control">
+                                                    </div>
+                                                     <div class="top-margin">
+                                                        <label>Email <span class="text-danger">*</span></label>
+                                                        <input name="email" type="text" class="form-control">
+                                                    </div>
+                                                    <div class="top-margin">
+                                                        <label>Phone <span class="text-danger">*</span></label>
+                                                        <input name="phone" type="text" class="form-control">
                                                     </div>
                                                     <div class="top-margin">
                                                         <label>Username <span class="text-danger">*</span></label>
@@ -379,10 +391,13 @@
                         {{/each}}
                     </div>
                 </div>
-                <div class="col-md-8" style="border: 1px solid white">
+                <div class="col-md-8" style="border: 1px solid white; color: white">
+                    <div class="row">
+                        <u>Friends</u>
+                    </div>
                     <div class="row">
                         {{#each friends}}
-                        <div class="friends-info col-md-4" style="text-align: center; color: white">
+                        <div class="friends-info col-md-4" style="text-align: center;">
                             <div class="show-image">
                                 <img src={{image}} style="width:85%; height:170px; margin-left: 30px; margin-top: 10px">
                                 <input class="update" id="update-{{_id}}" type="button" value="Update" />

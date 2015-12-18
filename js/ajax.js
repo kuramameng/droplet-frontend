@@ -51,12 +51,12 @@ var authAPI = {
     }, callback);
   },
 
-  createProfile: function(callback) {
+  createProfile: function(credentials, callback) {
     this.ajax({
       method: 'POST',
       url: this.api_url + '/profiles',
       contentType: 'application/json; charset=utf-8',
-      data: JSON.stringify({})
+      data: JSON.stringify(credentials)
     }, callback);
   },
 
@@ -125,6 +125,7 @@ $(document).ready(function(){
       var cb = function cb(error, data) {
         if (error) {
           callback(error);
+<<<<<<< HEAD
           // return;
           $("#register-result").html("")
           $("#register-result").html("You're registered! Now log in.")
@@ -147,6 +148,26 @@ $(document).ready(function(){
         }, callback);
       callback(null, data)};
       authAPI.register(credentials, cb);
+=======
+          $("#register-result").html("Something went wrong, try again")
+          return;
+        }
+        authAPI.login(credentials, function(err, data){
+          if(err) console.log(err)
+            authAPI.createProfile({
+              "location" : credentials.location,
+              "first_name" : credentials.first_name,
+              "last_name" : credentials.last_name,
+              "email" : credentials.email,
+              "phone" : credentials.phone
+            }, callback)
+          changeLogin();
+        });
+
+        $("#register-result").html("You're registered! Now logging in...");
+      };
+      authAPI.register(credentials, cb)
+>>>>>>> development
     };
   });
 
