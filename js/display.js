@@ -102,11 +102,12 @@ var updateFriend = function(id){
   }).done(function(friend){
     $('#friend-pic').attr("src", friend[0].image);
     $('#friend-pic-url').attr("value", friend[0].image);
-    $('#add-friend-form input[name = first_name]').attr("value", friend[0].first_name);
-    $('#add-friend-form input[name = last_name]').attr("value", friend[0].last_name);
-    $('#add-friend-form input[name = location]').attr("value", friend[0].location);
-    $('#add-friend-form input[name = phone]').attr("value", friend[0].phone);
-    $('#add-friend-form input[name = email]').attr("value", friend[0].email);
+    $('#add-friend-form input[type=text]').val("");
+    $('#add-friend-form input[name = first_name]').val(friend[0].first_name);
+    $('#add-friend-form input[name = last_name]').val(friend[0].last_name);
+    $('#add-friend-form input[name = location]').val(friend[0].location);
+    $('#add-friend-form input[name = phone]').val(friend[0].phone);
+    $('#add-friend-form input[name = email]').val(friend[0].email);
     $('#friend-update').prop("value", "update");
   }).fail(function(friend){
     console.error(friend);
