@@ -2,7 +2,7 @@
 var idStr;
 var authAPI = {
 
-  api_url: 'https://tranquil-bayou-4458.herokuapp.com',
+  api_url: 'https://fierce-refuge-1354.herokuapp.com',
 
   ajax: function(config, cb){
     $.ajaxSetup({
@@ -134,6 +134,7 @@ $(document).ready(function(){
               "location" : credentials.location,
               "first_name" : credentials.first_name,
               "last_name" : credentials.last_name,
+              "uesrname" : credentials.username,
               "email" : credentials.email,
               "phone" : credentials.phone
             }, callback)

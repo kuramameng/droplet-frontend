@@ -9,17 +9,17 @@ var changeLogin = function(){
   $('#user-center').show();
   $.ajax({
     method: "GET",
-    url: "https://tranquil-bayou-4458.herokuapp.com/profiles",
+    url: "https://fierce-refuge-1354.herokuapp.com/profiles",
     dataType: "json"
   }).done(function(profile){
       $.ajax({
         method: "GET",
-        url: "https://tranquil-bayou-4458.herokuapp.com/friends",
+        url: "https://fierce-refuge-1354.herokuapp.com/friends",
         dataType: "json"
       }).done(function(friends){
         $.ajax({
           method: "GET",
-          url: "https://tranquil-bayou-4458.herokuapp.com/messages",
+          url: "https://fierce-refuge-1354.herokuapp.com/messages",
           dataType: "json"
         }).done(function(messages){
           var data = {};
@@ -67,7 +67,7 @@ var changeLogout = function(){
 var changeProfile = function(){
   $.ajax({
     method: "GET",
-    url: "https://tranquil-bayou-4458.herokuapp.com/profiles",
+    url: "https://fierce-refuge-1354.herokuapp.com/profiles",
     dataType: "json"
   }).done(function(profile){
     var profileIndexTemplate = Handlebars.compile($('#user-profile-index').html());
@@ -95,7 +95,7 @@ var updateFriend = function(id){
   $('#add-friend').show();
   $.ajax({
     method: "GET",
-    url: "https://tranquil-bayou-4458.herokuapp.com/friends/" + id,
+    url: "https://fierce-refuge-1354.herokuapp.com/friends/" + id,
     dataType: "json"
   }).done(function(friend){
     $('#friend-pic').attr("src", friend[0].image);
@@ -150,7 +150,7 @@ var sendMessage = function(id){
   $('#send-message').show();
   $.ajax({
     method: "GET",
-    url: "https://tranquil-bayou-4458.herokuapp.com/friends/" + id,
+    url: "https://fierce-refuge-1354.herokuapp.com/friends/" + id,
     dataType: "json"
   }).done(function(friend){
     $('#message-info').find('input[name=to]').val(friend[0].phone);
