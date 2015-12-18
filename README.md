@@ -30,4 +30,4 @@ Given more time, I'd like to:
 <h2>Links</h2>
 
 <a href="http://kuramameng.github.io/droplet-frontend"> Deployed front-end</a>
-<a href-"https://github.com/kuramameng/droplet-api"> Backend repo</a>
+<a href="https://github.com/kuramameng/droplet-api"> Backend repo</a>
