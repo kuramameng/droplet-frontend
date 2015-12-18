@@ -60,6 +60,7 @@ var changeLogout = function(){
   $('.menu-bottom').show();
   $('.toggle-menu').show();
   $('#user-center').hide();
+  $('#user-profile').hide();
   $('#check-weather').hide();
   $('.register').show();
   $('.homepage').hide();
