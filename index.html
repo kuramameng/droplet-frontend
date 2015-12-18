@@ -275,7 +275,7 @@
 
                     <!-- ADD FRIEND-->
                     <div id="add-friend">
-                        <div class="row" style="color: black">
+                        <div class="row" style="color: black; font-size: 20px">
                             <form id="add-friend-form">
                                 <div class="col-md-5">
                                     <div style="border: 1px solid white; height: 250px; margin-bottom: 20px; text-align: center">
@@ -290,13 +290,13 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="row" style="float: left; margin-left: 20px">
-                                        <div>
+                                        <div style="color: white">
                                             First Name
                                         </div>
                                         <div>
                                             <input type="text" name="first_name" id="first_name" placeholder="Jon"></input>
                                         </div>
-                                        <div>
+                                        <div style="color: white">
                                             Last Name
                                         </div>
                                         <div>
@@ -305,13 +305,13 @@
                                         <br>
                                     </div>
                                     <div class="row" style="float: left; margin-left: 20px">
-                                        <div>
+                                        <div style="color: white">
                                             Location
                                         </div>
                                         <div>
                                             <input type="text" name="location" id="location" placeholder="Boston, MA"></input>
                                         </div>
-                                        <div>
+                                        <div style="color: white">
                                             Phone
                                         </div>
                                         <div>
@@ -320,7 +320,7 @@
                                         <br>
                                     </div>
                                     <div class="row" style="float: left; margin-left: 20px">
-                                        <div>
+                                        <div style="color: white">
                                             Email
                                         </div>
                                         <div>
@@ -369,7 +369,7 @@
             <br>
             <div class="row" style="margin-top: 20px">
                 <div class="col-md-4">
-                    <div class="user-location-weather"  style="height: 200px; border: 1px solid white; color: white; padding-left: 20px">
+                    <div class="user-location-weather"  style="height: 200px; border: 1px solid white; color: white; padding-left: 20px; font-size: 15px">
                         <u>Your Profile</u>
                         <br>
                         <b>Location:</b> {{profile.location}}
@@ -381,7 +381,7 @@
                         <b>Weather: {{getWeather profile.location profile._id}}</b>
                         <div id="weather{{profile._id}}"></div>
                     </div>
-                    <div class="recent-message" style=" border: 1px solid white; color: white; padding-left: 20px">
+                    <div class="recent-message" style=" border: 1px solid white; color: white; padding-left: 20px; font-size:15px">
                         <u>Recent Messages</u>
                         {{#each messages}}
                         <div class="row">
@@ -399,7 +399,7 @@
                 </div>
                 <div class="col-md-8" style="border: 1px solid white; color: white">
                     <div class="row">
-                        <u>Friends</u>
+                        <u><span style="font-size: 18px">Friends</span></u>
                     </div>
                     <div class="row">
                         {{#each friends}}
@@ -410,7 +410,7 @@
                                 <input class="delete" id="delete-{{_id}}" type="button" value="Delete" />
                                 <input class="send-message" id="send-{{_id}}" type="button" value="Send Message" />
                             </div>
-                            <p>{{first_name}} {{last_name}}</p>
+                            <p><span style="font-size:18px">{{first_name}} {{last_name}}</span></p>
                             <p>{{location}}</p>
                             <p>Weather: <i id="weatherpic{{_id}}" style="margin-right: 5px; margin-left: 5px"></i>{{getWeather location _id}}<span id="weather{{_id}}"></span></p>
                         </div>

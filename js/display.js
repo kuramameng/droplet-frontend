@@ -108,6 +108,7 @@ var updateFriend = function(id){
     $('#add-friend-form input[name = location]').val(friend[0].location);
     $('#add-friend-form input[name = phone]').val(friend[0].phone);
     $('#add-friend-form input[name = email]').val(friend[0].email);
+    $('#friend-pic-url').val(friend[0].image);
     $('#friend-update').prop("value", "update");
   }).fail(function(friend){
     console.error(friend);
@@ -121,7 +122,7 @@ var addFriend = function(){
   $('#check-weather').hide();
   $('#send-message').hide();
   $('#friend-pic').attr("src", "");
-  $('#friend-pic-url').attr("value", "");
+  $('#friend-pic-url').val("");
   $('#add-friend-form input[type=text]').val("");
   $('#friend-update').prop("value", "add");
   $('#add-friend').show();
