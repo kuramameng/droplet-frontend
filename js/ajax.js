@@ -212,7 +212,11 @@ $(document).ready(function(){
   $('#message-info').unbind('submit').bind('submit', function(e){
     e.preventDefault();
     var form = form2object(this);
-    authAPI.createMessage(form, callback);
+    authAPI.createMessage(form, function(err, data){
+      if(err) console.log(err)
+      $('#message-status').html('');
+      $('#message-status').html('Message Sent');
+    });
   });
 
   $(document).on('click','.show-image',function(event){

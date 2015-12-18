@@ -57,7 +57,7 @@
     $('#check-weather').hide();
     $('#add-friend').hide();
     $('#send-message').show();
-    $('#message-info').find('input[type=text]').val('');
+    $('#message-info').find('input[type=text] textarea').val('');
     $('#send-message-user-pic').attr("src", "");
   });
   $(document).on("click", '#add-friend-btn', function(){

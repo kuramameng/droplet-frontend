@@ -121,11 +121,7 @@ var addFriend = function(){
   $('#send-message').hide();
   $('#friend-pic').attr("src", "");
   $('#friend-pic-url').attr("value", "");
-  $('#add-friend-form input[name = first_name]').attr("value", "");
-  $('#add-friend-form input[name = last_name]').attr("value", "");
-  $('#add-friend-form input[name = location]').attr("value", "");
-  $('#add-friend-form input[name = phone]').attr("value", "");
-  $('#add-friend-form input[name = email]').attr("value", "");
+  $('#add-friend-form input[type=text]').val("");
   $('#friend-update').prop("value", "add");
   $('#add-friend').show();
 };
