@@ -63,6 +63,7 @@ var changeLogout = function(){
   $('#check-weather').hide();
   $('.register').show();
   $('.homepage').hide();
+  $('#register').find('input[type=text]').val('');
 };
 
 var changeProfile = function(){
