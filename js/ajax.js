@@ -223,8 +223,10 @@ $(document).ready(function(){
       updateFriend(idStr);
     }
     if (method === 'delete'){
-      authAPI.deleteFriend(idObj, callback);
-      changeLogin();
+      authAPI.deleteFriend(idObj, function(err, data){
+        if(err) console.log(err);
+        changeLogin();
+      });
     }
     if (method === 'send'){
       sendMessage(idStr);
