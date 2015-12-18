@@ -135,7 +135,8 @@ var addWeatherFriend = function(){
   $('#send-message').hide();
   $('#friend-pic').attr("src", "");
   $('#friend-pic-url').attr("value", "");
-  $('#add-friend-form input[name = location]').attr("value", $('#search-weather input[name = city]').val() + ', ' + $('#search-weather input[name = state]').val());
+  $('#add-friend-form input[type=text]').val("");
+  $('#add-friend-form input[name = location]').val($('#search-weather input[name = city]').val() + ', ' + $('#search-weather input[name = state]').val());
   $('#friend-update').prop("value", "add");
   $('#add-friend').show();
 };
