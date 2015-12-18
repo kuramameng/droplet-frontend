@@ -135,6 +135,7 @@ $(document).ready(function(){
               "first_name" : credentials.first_name,
               "last_name" : credentials.last_name,
               "uesrname" : credentials.username,
+              "image" : credentials.image,
               "email" : credentials.email,
               "phone" : credentials.phone
             }, function(err, data){

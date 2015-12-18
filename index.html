@@ -134,6 +134,10 @@
                                                         <input name="phone" type="text" class="form-control">
                                                     </div>
                                                     <div class="top-margin">
+                                                        <label>Profile Image <span class="text-danger">*</span></label>
+                                                        <input name="image" type="text" placeholder="paste in your profile image..." class="form-control">
+                                                    </div>
+                                                    <div class="top-margin">
                                                         <label>Username <span class="text-danger">*</span></label>
                                                         <input name="username" type="text" class="form-control" placeholder="john423">
                                                     </div>
@@ -426,11 +430,11 @@
         <script id="user-profile-index" type="text-x-handlebars-template">
             <div class="row">
                 <div class="col-md-5 profile-block">
-                    <div class="user-name">
-                        <u>Name</u>
+                    <div style="height: 170px">
+                        <img src={{image}} style="width:60%; height:170px; margin-left: 30px; margin-top: 10px">
                     </div>
                     <div style="margin-top: 50px">
-                        {{first_name}} {{last_name}} ({{username}})
+                        {{first_name}} {{last_name}}
                     </div>
                 </div>
                 <div class="col-md-1">
